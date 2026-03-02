@@ -3,197 +3,201 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Orb Group — Calculadora e Contato</title>
-<meta name="description" content="Orb Group — calculadora de mídia simplificada, estimativas e contato via WhatsApp." />
-<meta name="theme-color" content="#5B3BA8" />
+<title>Orb Group — Mídia, Performance e Resultados</title>
+<meta name="description" content="Orb Group — soluções premium em mídia: agenciamento, produção e veiculação. Calculadora, cases e contato rápido via WhatsApp." />
+<meta name="theme-color" content="#3b1f66" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* =========================
-     VARS + RESET
-     ========================= */
+  /* ======================
+     THEME VARIABLES (edite aqui)
+     ====================== */
   :root{
-    --purple:#5B3BA8;
-    --purple-700:#40235f;
-    --accent:#F2B705;
-    --bg-gradient: linear-gradient(180deg,var(--purple),var(--purple-700));
+    --primary-a: #5B3BA8; /* deep purple */
+    --primary-b: #3b1f66; /* darker */
+    --accent: #F2B705;    /* gold */
+    --bg-start: #0f0716;
+    --bg-end: #2e0f3a;
     --glass: rgba(255,255,255,0.04);
     --muted: rgba(255,255,255,0.92);
     --muted-2: rgba(255,255,255,0.78);
-    --card: rgba(0,0,0,0.06);
-    --radius:14px;
-    --shadow: 0 18px 36px rgba(0,0,0,0.36);
-    --max-width:1100px;
+    --card: rgba(255,255,255,0.03);
+    --radius: 14px;
+    --shadow-lg: 0 20px 50px rgba(0,0,0,0.45);
     --ff-heading: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     --ff-body: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    --focus: rgba(242,183,5,0.2);
+    --max-width:1200px;
   }
 
+  /* ======================
+     RESET & BASE
+     ====================== */
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0;
     font-family:var(--ff-body);
     color:var(--muted);
-    background:var(--bg-gradient);
+    background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     line-height:1.45;
+    transition:background 520ms ease;
   }
   a{color:inherit;text-decoration:none}
   img{max-width:100%;height:auto;display:block}
-  .container{ width:calc(100% - 2rem); max-width:var(--max-width); margin:0 auto; padding:2rem 0; }
+  .container{ width:calc(100% - 2rem); max-width:var(--max-width); margin:0 auto; padding:2.2rem 0; }
 
-  /* =========================
+  /* ======================
      HEADER
-     ========================= */
+     ====================== */
   header.site-header{
-    position:fixed; inset:0 0 auto 0; z-index:140;
-    background: linear-gradient(180deg, rgba(91,59,168,0.98), rgba(64,35,100,0.92));
-    border-bottom:1px solid rgba(255,255,255,0.04); backdrop-filter: blur(6px);
+    position:fixed; inset:0 0 auto 0; z-index:160;
+    background: linear-gradient(180deg, rgba(91,59,168,0.96), rgba(59,35,120,0.86));
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(6px);
   }
-  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.9rem 1rem; }
-  .brand{ font-family:var(--ff-heading); font-weight:700; color:#fff; letter-spacing:0.2px }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1rem; max-width:var(--max-width); margin:0 auto; }
+  .brand { display:flex; align-items:center; gap:0.6rem; color:#fff; font-family:var(--ff-heading); font-weight:700; letter-spacing:0.4px }
+  .brand svg{ height:36px; width:auto }
   nav.site-nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:0.6rem; align-items:center; }
-  nav.site-nav a{ padding:0.35rem 0.6rem; border-radius:8px; font-weight:600; color:var(--muted-2); font-size:0.95rem }
+  nav.site-nav a{ padding:0.5rem 0.75rem; border-radius:10px; font-weight:600; color:var(--muted-2); font-size:0.95rem }
   nav.site-nav a:hover, nav.site-nav a:focus{ background: rgba(242,183,5,0.10); color:#fff; outline:none }
 
-  /* =========================
-     HERO
-     ========================= */
-  main{ padding-top:96px }
-  .hero{ padding-bottom:28px; padding-top:22px; }
-  .hero-grid{ display:grid; grid-template-columns:1fr 340px; gap:1.6rem; align-items:center; }
-  .hero h1{ font-family:var(--ff-heading); font-weight:700; font-size:clamp(1.6rem,4vw,2.4rem); margin:0; color:#fff; line-height:1.06 }
-  .lead{ margin:0.6rem 0 1rem 0; color:var(--muted-2); max-width:62ch }
-  .cta-row{ display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap }
-  .btn{ display:inline-flex; align-items:center; gap:0.5rem; padding:0.72rem 1rem; border-radius:10px; font-weight:700; cursor:pointer; border:0 }
-  .btn-primary{ background:var(--accent); color:var(--purple); box-shadow:0 12px 36px rgba(242,183,5,0.18) }
-  .btn-ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.08) }
+  /* ======================
+     HERO (luxury) 
+     ====================== */
+  main{ padding-top:110px }
+  .hero{ padding:3rem 0 2.2rem 0; display:grid; grid-template-columns: 1fr 420px; gap:2rem; align-items:center; }
+  .hero-left{ max-width:720px }
+  h1.hero-title{ font-family:var(--ff-heading); color:#fff; margin:0 0 0.6rem 0; font-size:clamp(1.8rem,4.5vw,3.4rem); line-height:1.02 }
+  p.lead{ color:var(--muted-2); margin:0 0 1rem 0; font-size:1.05rem }
+  .hero-ctas{ display:flex; gap:0.8rem; align-items:center }
+  .btn{ display:inline-flex; align-items:center; gap:0.6rem; padding:0.9rem 1.1rem; border-radius:12px; cursor:pointer; font-weight:800; border:0 }
+  .btn-primary{ background:var(--accent); color:var(--primary-b); box-shadow:0 14px 36px rgba(242,183,5,0.12) }
+  .btn-outline{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.08) }
 
-  .hero-visual{ width:100%; max-width:320px; border-radius:16px; box-shadow:var(--shadow); overflow:hidden; background:linear-gradient(180deg,#fff7df,#fff5c6) }
+  .hero-stats{ display:flex; gap:0.8rem; margin-top:1.2rem; flex-wrap:wrap }
+  .stat { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); padding:12px 14px; border-radius:12px; min-width:140px; box-shadow:var(--shadow-lg) }
+  .stat .n{ font-size:1.2rem; font-weight:800; color:#fff }
+  .stat .t{ font-size:0.85rem; color:var(--muted-2); margin-top:6px }
 
-  /* =========================
-     SECTIONS & CARDS
-     ========================= */
-  section{ padding:2.2rem 0; background:transparent }
-  h2{ font-family:var(--ff-heading); color:#fff; margin:0 0 0.6rem 0; font-size:1.15rem }
-  .muted{ color:var(--muted-2) }
-  .cards-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; margin-top:1rem }
-  .card{ background:var(--card); padding:1rem; border-radius:12px; box-shadow:0 8px 26px rgba(0,0,0,0.18); border:1px solid rgba(255,255,255,0.03); transition:transform .28s ease, box-shadow .28s ease; }
-  .card:hover{ transform:translateY(-8px); box-shadow:0 22px 46px rgba(0,0,0,0.36) }
+  .hero-right{ display:flex; align-items:center; justify-content:center }
+  .hero-visual{ width:100%; max-width:420px; border-radius:18px; overflow:hidden; box-shadow:var(--shadow-lg); background:linear-gradient(180deg,#fff8e6,#fff5cc); }
 
-  /* =========================
-     CALCULADORA SIMPLIFICADA (UI melhorada)
-     ========================= */
+  /* ======================
+     SECTIONS: ABOUT / SERVICES / CASES
+     ====================== */
+  section{ padding:3rem 0; }
+  .section-head{ display:flex; align-items:baseline; gap:1rem; margin-bottom:1rem }
+  .section-head h2{ font-family:var(--ff-heading); color:#fff; margin:0; font-size:1.25rem }
+  .section-head p{ margin:0; color:var(--muted-2) }
+
+  .services-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem }
+  .service{ background:var(--card); padding:1.2rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.25); transition:transform .28s ease; }
+  .service:hover{ transform:translateY(-8px) }
+
+  /* portfolio */
+  .portfolio-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem }
+  .case{ border-radius:12px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1rem; box-shadow:var(--shadow-lg) }
+  .case .title{ color:#fff; font-weight:700 }
+  .case .desc{ color:var(--muted-2); margin-top:6px }
+
+  /* ======================
+     CALCULADORA (simples & elegante)
+     ====================== */
   .calc-wrap{ display:flex; gap:1.4rem; align-items:flex-start; flex-wrap:wrap }
   .calc-panel{
-    flex:1 1 640px;
+    flex:1 1 680px;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:14px; padding:1.2rem; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.03);
-    transform-origin:top center;
+    border-radius:14px; padding:1.2rem; box-shadow:var(--shadow-lg); border:1px solid rgba(255,255,255,0.03);
   }
-  .panel-title{ font-family:var(--ff-heading); font-size:1.05rem; font-weight:700; color:#fff }
-  .panel-sub{ color:var(--muted-2); font-size:0.95rem }
+  .calc-hero { display:flex; gap:1rem; align-items:center; justify-content:space-between }
+  .budget-input{ display:flex; gap:0.6rem; align-items:center }
+  .input-addon{ padding:10px 12px; border-radius:10px; background:rgba(255,255,255,0.03); color:var(--muted-2) }
+  input.budget{ padding:14px; font-size:1.15rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff; font-weight:700; min-width:160px }
 
-  .field{ display:flex; flex-direction:column; gap:8px; margin-bottom:0.8rem }
-  label{ font-weight:700; color:#fff; font-size:0.95rem }
-
-  /* Orçamento - destaque */
-  .budget-input {
-    display:flex; gap:0.6rem; align-items:center;
-  }
-  .budget-input .input-addon{ background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:10px; color:var(--muted-2); font-weight:700 }
-  input.budget {
-    flex:1; padding:14px; font-size:1.18rem; border-radius:10px; border:1px solid rgba(255,255,255,0.06);
-    background:transparent; color:#fff; font-weight:700;
-  }
-  input.budget::placeholder{ color:rgba(255,255,255,0.5); font-weight:400 }
-
-  /* Preset select */
-  select.preset {
-    padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--muted-2);
-  }
-
-  /* KPI Cards */
-  .kpis { display:flex; gap:0.8rem; margin:0.6rem 0 1rem 0; flex-wrap:wrap }
-  .kpi { flex:1 1 160px; background:var(--glass); padding:12px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.22); }
+  .kpis { display:flex; gap:0.8rem; margin-top:1rem; flex-wrap:wrap }
+  .kpi { flex:1 1 160px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; text-align:center }
   .kpi .label{ font-size:0.85rem; color:var(--muted-2) }
-  .kpi .value{ font-weight:800; color:#fff; font-size:1.12rem; margin-top:6px }
+  .kpi .value{ font-weight:800; color:#fff; font-size:1.15rem }
 
-  /* Deliverables list */
-  .deliverables { display:grid; gap:8px; margin-top:8px }
-  .dv-item { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px; background:rgba(0,0,0,0.03); border-radius:10px }
-  .dv-item .name{ color:var(--muted-2); font-weight:700 }
-  .dv-item .num{ font-weight:800; color:#fff }
+  .deliverables{ margin-top:0.8rem; display:grid; gap:8px }
+  .deliverable{ display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.04); padding:10px; border-radius:10px }
 
-  /* Advanced panel (sliders) */
-  .advanced-panel { margin-top:10px; padding:10px; border-radius:10px; background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.03) }
-  .range-row{ display:flex; gap:0.8rem; align-items:center }
-  .range-row label{ flex:1 1 120px; color:var(--muted-2) }
-  input[type="range"]{ width:120px }
-
-  /* SUMMARY side panel */
+  /* summary side */
   .summary-panel{
-    width:340px; min-width:280px;
+    width:360px; min-width:300px;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:14px; padding:1rem; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,0.03);
-    display:flex; flex-direction:column; gap:0.8rem; position:relative;
+    border-radius:14px; padding:1rem; box-shadow:var(--shadow-lg); border:1px solid rgba(255,255,255,0.03);
+    display:flex; flex-direction:column; gap:0.8rem;
   }
-  .alloc-bar{ height:18px; background:rgba(0,0,0,0.08); border-radius:999px; overflow:hidden; display:flex; }
-  .seg{ height:100% }
-  .seg.videos{ background: linear-gradient(90deg, rgba(242,183,5,0.98), rgba(242,183,5,0.65)); }
-  .seg.outdoors{ background: linear-gradient(90deg, rgba(255,255,255,0.14), rgba(255,255,255,0.10)); }
-  .seg.redes{ background: linear-gradient(90deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06)); }
-  .seg.tv{ background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); }
 
-  /* CONTACT section improvements */
-  .contact-form { max-width:760px; margin-top:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .contact-grid .full { grid-column:1/-1 }
-  .consent { font-size:0.85rem; color:var(--muted-2); display:flex; gap:8px; align-items:center }
+  /* ======================
+     CLIENTS & TESTIMONIALS (proof)
+     ====================== */
+  .clients{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+  .client-logo{ width:92px; height:52px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); display:flex; align-items:center; justify-content:center; color:var(--primary-b); font-weight:800 }
 
-  /* TOAST */
-  .toast { position:fixed; right:16px; bottom:16px; background:#111; color:#fff; padding:12px 14px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.45); z-index:220; opacity:0; transform:translateY(10px); pointer-events:none; transition:opacity .32s ease, transform .32s ease; }
-  .toast.show{ opacity:1; transform:none; pointer-events:auto; }
+  .testimonials{ display:grid; grid-template-columns:1fr; gap:12px }
+  .testimonial{ background:rgba(0,0,0,0.03); padding:14px; border-radius:12px }
 
-  /* Accessibility focus */
-  :focus{ outline:3px solid var(--focus); outline-offset:3px; border-radius:8px }
+  /* ======================
+     CONTACT
+     ====================== */
+  .contact-panel{ display:grid; grid-template-columns:1fr 360px; gap:1rem; align-items:start }
+  .contact-form{ background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
+  .form-row{ display:flex; gap:8px }
+  input, textarea, select{ padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff }
+  textarea{ min-height:120px }
 
-  /* Animations: reveal in/out (ida e volta) */
-  [data-reveal]{ opacity:0; transform:translateY(12px) scale(.997); transition:opacity .55s cubic-bezier(.2,.9,.25,1), transform .55s cubic-bezier(.2,.9,.25,1); will-change:opacity,transform; }
-  [data-reveal].is-visible{ opacity:1; transform:none; }
-  [data-reveal].is-hidden{ opacity:0; transform:translateY(10px) scale(.995); pointer-events:none; }
+  /* ======================
+     TOAST & MISC
+     ====================== */
+  .toast{ position:fixed; right:18px; bottom:18px; background:#0f0f12; color:#fff; padding:12px 14px; border-radius:10px; box-shadow:0 12px 34px rgba(0,0,0,0.5); z-index:9999; opacity:0; transform:translateY(8px); transition:opacity .28s ease, transform .28s ease }
+  .toast.show{ opacity:1; transform:none }
 
-  /* Stagger for lists */
-  .stagger > *{ opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease }
-  .stagger.is-visible > *{ opacity:1; transform:none }
-  .stagger.is-visible > *:nth-child(1){ transition-delay:0.06s }
-  .stagger.is-visible > *:nth-child(2){ transition-delay:0.12s }
-  .stagger.is-visible > *:nth-child(3){ transition-delay:0.18s }
+  /* ======================
+     REVEAL ANIMATIONS (ida & volta)
+     ====================== */
+  [data-reveal]{ opacity:0; transform:translateY(18px) scale(.995); transition:opacity .6s cubic-bezier(.2,.9,.25,1), transform .6s cubic-bezier(.2,.9,.25,1); will-change:opacity,transform; }
+  [data-reveal].visible{ opacity:1; transform:none }
+  [data-reveal].leaving{ opacity:0; transform:translateY(12px) scale(.996); transition-duration:320ms; pointer-events:none }
 
-  /* Responsive */
+  .stagger > *{ opacity:0; transform:translateY(12px); transition:opacity .48s ease, transform .48s ease }
+  .stagger.visible > *{ opacity:1; transform:none }
+  .stagger.visible > *:nth-child(1){ transition-delay:0.06s }
+  .stagger.visible > *:nth-child(2){ transition-delay:0.12s }
+  .stagger.visible > *:nth-child(3){ transition-delay:0.18s }
+
+  /* responsive */
   @media (max-width:980px){
-    .hero-grid{ grid-template-columns:1fr; }
+    .hero{ grid-template-columns:1fr; }
+    .contact-panel{ grid-template-columns:1fr; }
     .calc-wrap{ flex-direction:column-reverse }
     .summary-panel{ width:100% }
-    .calc-panel{ width:100% }
-    .contact-grid{ grid-template-columns:1fr }
   }
   @media (max-width:640px){
     nav.site-nav{ display:none }
+    .header-inner{ padding:0.75rem 1rem }
   }
 </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Orb Group — ir para início">Orb Group</a>
+    <div class="header-inner" role="navigation" aria-label="Navegação principal">
+      <a class="brand" href="#home" aria-label="Orb Group — ir ao início">
+        <!-- inline logo -->
+        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="120" height="40" rx="8" fill="#F2B705"/><text x="12" y="26" font-family="Poppins, sans-serif" font-weight="700" font-size="14" fill="#5B3BA8">ORB</text></svg>
+        <span>Orb Group</span>
+      </a>
 
-      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navegação principal">
+      <nav class="site-nav" aria-label="Menu principal">
         <ul>
           <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cases">Cases</a></li>
           <li><a href="#calculadora">Calculadora</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -203,217 +207,240 @@
 
   <main id="home" role="main">
     <!-- HERO -->
-    <section id="hero" class="hero container" aria-labelledby="hero-title" data-reveal>
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title">Transformamos investimento em resultado — mídia que multiplica.</h1>
-          <p class="lead">Use a calculadora simplificada para estimar entregáveis e retorno de forma rápida. Opções avançadas ficam disponíveis se quiser personalizar.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#calculadora">Testar a calculadora</a>
-            <a class="btn btn-ghost" href="#contato">Falar com um consultor</a>
-          </div>
+    <section id="hero" class="container hero" data-reveal data-theme="dark-purple">
+      <div class="hero-left">
+        <h1 class="hero-title">Mídia que multiplica investimento. Estratégia que gera resultado.</h1>
+        <p class="lead">Somos uma agência premium que combina criatividade, dados e execução de alto padrão para marcas que buscam escala e reputação.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#calculadora">Testar calculadora</a>
+          <a class="btn btn-outline" href="#cases">Ver cases</a>
         </div>
 
-        <div class="hero-visual" aria-hidden="true" data-reveal>
-          <!-- Decorative inline SVG -->
+        <div class="hero-stats" aria-hidden="false">
+          <!-- Editable numbers: substitua data-target por seus números reais -->
+          <div class="stat">
+            <div class="n" data-target="12">0</div>
+            <div class="t">anos de mercado</div>
+          </div>
+          <div class="stat">
+            <div class="n" data-target="220">0</div>
+            <div class="t">campanhas entregues</div>
+          </div>
+          <div class="stat">
+            <div class="n" data-target="95">0</div>
+            <div class="t">NPS médio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-visual" aria-hidden="true">
+          <!-- decorative inline art -->
           <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
-            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#F2B705"/><stop offset="1" stop-color="#ffd66b"/></linearGradient></defs>
+            <defs>
+              <linearGradient id="lg1" x1="0" x2="1"><stop offset="0" stop-color="#F2B705"/><stop offset="1" stop-color="#ffd66b"/></linearGradient>
+            </defs>
             <rect width="100%" height="100%" fill="#fff9e6"/>
-            <g transform="translate(40,30)">
-              <circle cx="220" cy="120" r="86" fill="url(#g1)" opacity="0.98"/>
-              <text x="220" y="135" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="56" fill="#5B3BA8">ORB</text>
+            <g transform="translate(30,20)">
+              <circle cx="220" cy="120" r="86" fill="url(#lg1)"/>
+              <text x="220" y="136" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="56" fill="#5B3BA8">ORB</text>
             </g>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- CALCULADORA SIMPLIFICADA -->
-    <section id="calculadora" class="container" aria-labelledby="calc-title" data-reveal>
-      <h2 id="calc-title">Calculadora ORM — estimativa rápida</h2>
-      <p class="muted">Digite o orçamento e escolha um preset. O resultado atualiza automaticamente (live preview).</p>
+    <!-- ABOUT -->
+    <section id="sobre" class="container" data-reveal data-theme="mid-purple">
+      <div class="section-head">
+        <h2>Quem somos</h2>
+        <p class="muted">Uma união de estratégia, produção e media buying para marcas que querem presença e resultado mensurável.</p>
+      </div>
 
-      <div class="calc-wrap" role="region" aria-label="Calculadora simplificada">
-        <!-- FORM PANEL -->
-        <section class="calc-panel" aria-labelledby="panel-title" id="calc-panel" data-reveal>
-          <div class="panel-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px">
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:1.2rem;align-items:start">
+        <div>
+          <p class="muted">A Orb Group nasceu para atender clientes que entendem que criatividade sozinha não basta — é preciso execução com dados, processos e visão de negócios. Entregamos campanhas integradas (vídeo, redes, outdoors e TV) com foco em retorno.</p>
+
+          <div style="margin-top:1rem" class="stagger" data-reveal>
+            <div class="service"><strong>Estratégia de lançamento</strong><div class="muted" style="margin-top:6px">Funil completo + Criativo + Tráfego</div></div>
+            <div class="service"><strong>Produção de vídeo</strong><div class="muted" style="margin-top:6px">Roteiro, direção, edição e distribuição</div></div>
+            <div class="service"><strong>Media buying</strong><div class="muted" style="margin-top:6px">Planejamento e otimização por canal</div></div>
+          </div>
+        </div>
+
+        <aside style="background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:12px;box-shadow:var(--shadow-lg)">
+          <div style="font-weight:800;color:#fff;font-size:1.05rem">Por que escolher a Orb</div>
+          <ul style="margin-top:8px;color:var(--muted-2);padding-left:18px">
+            <li>Equipe sênior com histórico em lançamentos e performance</li>
+            <li>Processos testados para replicabilidade</li>
+            <li>Relatórios claros e acompanhamento próximo</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CASES / PORTFOLIO -->
+    <section id="cases" class="container" data-reveal data-theme="gold-accent">
+      <div class="section-head">
+        <h2>Cases selecionados</h2>
+        <p class="muted">Projetos que combinam criatividade e ROI — resultados reais para marcas reais.</p>
+      </div>
+
+      <div class="portfolio-grid stag" style="margin-top:12px">
+        <div class="case" data-reveal>
+          <div class="title">Lançamento X — +350% CVR</div>
+          <div class="desc">Estratégia de funil + criativo otimizado que escalou vendas em 3 meses.</div>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="title">Marca Y — posicionamento nacional</div>
+          <div class="desc">Campanha de outdoors + digital com posicionamento e recall de marca.</div>
+        </div>
+
+        <div class="case" data-reveal>
+          <div class="title">Produto Z — escalabilidade</div>
+          <div class="desc">Integração de produção e tráfego para reduzir CAC e aumentar LTV.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULADORA (refinada) -->
+    <section id="calculadora" class="container" data-reveal data-theme="deep-purple">
+      <div class="section-head">
+        <h2>Calculadora — previsão de entregáveis</h2>
+        <p class="muted">Insira seu orçamento para ter uma estimativa imediata. Valores e percentuais são editáveis.</p>
+      </div>
+
+      <div class="calc-wrap">
+        <section class="calc-panel" data-reveal>
+          <div class="calc-hero">
             <div>
-              <div id="panel-title" class="panel-title">Orçamento e modo</div>
-              <div class="panel-sub">Campo principal + presets. Clique em "Avançado" para ajustar percentuais.</div>
+              <div style="font-weight:800;color:#fff;font-size:1rem">Insira o orçamento</div>
+              <div class="muted" style="font-size:0.92rem">Resultado em tempo real — press Enter para focar em contato</div>
             </div>
-            <div style="font-size:0.9rem;color:var(--muted-2)">ROE padrão: <strong>3.5×</strong></div>
+
+            <div style="display:flex;gap:8px;align-items:center">
+              <div style="text-align:right;color:var(--muted-2)">ROE: <strong>3.5×</strong></div>
+            </div>
           </div>
 
-          <form id="calc-form" autocomplete="off" novalidate>
-            <!-- BUDGET -->
-            <div class="field">
-              <label for="orcamento">Orçamento (R$)</label>
-              <div class="budget-input">
-                <span class="input-addon">R$</span>
-                <input id="orcamento" class="budget" name="orcamento" type="text" inputmode="numeric" placeholder="Ex: 50.000,00" aria-describedby="orc-help" />
-              </div>
-              <div id="orc-help" class="muted" style="font-size:0.9rem">Digite o valor sem símbolos — formatamos para você.</div>
-              <div id="orc-error" role="alert" aria-live="polite" style="display:none;color:#ffd6d1;font-weight:700"></div>
-            </div>
-
-            <!-- PRESET -->
-            <div class="field" style="display:flex;gap:8px;align-items:center;">
-              <label for="preset" style="margin-bottom:0">Modo</label>
-              <select id="preset" class="preset" aria-label="Preset de alocação">
-                <option value="recomendada">Recomendada (padrão)</option>
-                <option value="local">Campanha Local</option>
-                <option value="nacional">Campanha Nacional</option>
+          <div style="margin-top:12px">
+            <div class="budget-input">
+              <span class="input-addon">R$</span>
+              <input id="calc-orc" class="budget" placeholder="50.000,00" inputmode="numeric" aria-label="Orçamento" />
+              <select id="calc-preset" style="border-radius:10px;padding:10px;background:transparent;color:var(--muted-2);border:1px solid rgba(255,255,255,0.06)">
+                <option value="recomendada">Recomendada</option>
+                <option value="local">Local</option>
+                <option value="nacional">Nacional</option>
                 <option value="lancamento">Lançamento</option>
-                <option value="performance">Foco em Performance</option>
+                <option value="performance">Performance</option>
               </select>
-
-              <button type="button" id="toggle-advanced" class="btn btn-ghost" style="margin-left:auto">Avançado</button>
             </div>
 
-            <!-- KPI cards (live) -->
-            <div class="kpis" aria-live="polite" aria-atomic="true">
-              <div class="kpi" id="kpi-budget">
-                <div class="label">Orçamento</div>
-                <div class="value" id="v-budget">—</div>
-              </div>
-              <div class="kpi" id="kpi-return">
-                <div class="label">Retorno estimado</div>
-                <div class="value" id="v-return">—</div>
-              </div>
-              <div class="kpi" id="kpi-used">
-                <div class="label">Valor utilizado</div>
-                <div class="value" id="v-used">—</div>
-              </div>
+            <div class="kpis" style="margin-top:12px">
+              <div class="kpi"><div class="label">Orçamento</div><div class="value" id="k-orc">—</div></div>
+              <div class="kpi"><div class="label">Retorno estimado</div><div class="value" id="k-ret">—</div></div>
+              <div class="kpi"><div class="label">Valor utilizado</div><div class="value" id="k-used">—</div></div>
             </div>
 
-            <!-- Deliverables -->
-            <div>
-              <div class="muted" style="font-weight:700">Entregáveis estimados</div>
-              <div class="deliverables" id="deliverables">
-                <div class="dv-item"><div class="name">Vídeos</div><div class="num" id="d-videos">0</div></div>
-                <div class="dv-item"><div class="name">Outdoors (mensal)</div><div class="num" id="d-outdoors">0</div></div>
-                <div class="dv-item"><div class="name">Posts (design)</div><div class="num" id="d-posts">0</div></div>
-                <div class="dv-item"><div class="name">Spots TV</div><div class="num" id="d-spots">0</div></div>
-              </div>
+            <div class="deliverables" style="margin-top:12px">
+              <div class="deliverable"><div class="muted">Vídeos</div><div class="n" id="r-videos">0</div></div>
+              <div class="deliverable"><div class="muted">Outdoors (mensal)</div><div class="n" id="r-outdoors">0</div></div>
+              <div class="deliverable"><div class="muted">Posts (design)</div><div class="n" id="r-posts">0</div></div>
+              <div class="deliverable"><div class="muted">Spots TV</div><div class="n" id="r-spots">0</div></div>
             </div>
 
-            <!-- Advanced panel (hidden by default) -->
-            <div id="advanced" class="advanced-panel" hidden>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                <div class="muted">Ajuste manual dos percentuais</div>
-                <div class="muted" id="advanced-sum">Soma: 100%</div>
-              </div>
-
-              <div class="range-row">
-                <label for="p-videos">Vídeos (%)</label>
-                <input id="p-videos" type="range" min="0" max="100" value="40" />
-                <output id="out-videos">40</output>
-              </div>
-              <div class="range-row">
-                <label for="p-outdoors">Outdoors (%)</label>
-                <input id="p-outdoors" type="range" min="0" max="100" value="30" />
-                <output id="out-outdoors">30</output>
-              </div>
-              <div class="range-row">
-                <label for="p-posts">Redes (%)</label>
-                <input id="p-posts" type="range" min="0" max="100" value="20" />
-                <output id="out-posts">20</output>
-              </div>
-              <div class="range-row">
-                <label for="p-tv">TV (%)</label>
-                <input id="p-tv" type="range" min="0" max="100" value="10" />
-                <output id="out-tv">10</output>
-              </div>
-              <div style="margin-top:8px" class="muted">Se a soma não for 100%, normalizamos automaticamente.</div>
-            </div>
-
-            <!-- Extras & actions -->
-            <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
-              <label style="display:flex;align-items:center;gap:8px;color:var(--muted-2);font-weight:700">
-                <input id="add-consult" type="checkbox" /> Consultoria (~5%)
-              </label>
-
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+              <label style="display:flex;align-items:center;gap:8px;color:var(--muted-2)"><input id="calc-consult" type="checkbox" /> Consultoria (~5%)</label>
               <div style="margin-left:auto;display:flex;gap:8px">
-                <button type="button" id="btn-share" class="btn btn-primary">Compartilhar (WhatsApp)</button>
-                <button type="button" id="btn-print" class="btn btn-ghost">Imprimir / PDF</button>
+                <button id="calc-share" class="btn btn-primary">Enviar contato</button>
+                <button id="calc-print" class="btn btn-outline">Imprimir</button>
               </div>
             </div>
-          </form>
+          </div>
         </section>
 
-        <!-- SUMMARY (side) -->
-        <aside class="summary-panel" aria-labelledby="summary-title" data-reveal>
+        <aside class="summary-panel" data-reveal>
           <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div id="summary-title" class="summary-title">Resumo rápido</div>
-              <div class="muted" style="font-size:0.9rem">Números aproximados para conversas iniciais</div>
-            </div>
-            <div style="font-size:0.85rem;color:var(--muted-2)"><strong>ROE 3.5×</strong></div>
+            <div style="font-weight:800;color:#fff">Resumo</div>
+            <div style="color:var(--muted-2)">Dinâmico</div>
           </div>
 
-          <div style="margin-top:6px">
-            <div class="label muted">Alocação</div>
+          <div style="margin-top:8px">
+            <div class="muted">Alocação</div>
             <div class="alloc-bar" style="margin-top:8px">
-              <div id="bar-videos" class="seg videos" style="width:40%"></div>
-              <div id="bar-outdoors" class="seg outdoors" style="width:30%"></div>
-              <div id="bar-posts" class="seg redes" style="width:20%"></div>
-              <div id="bar-tv" class="seg tv" style="width:10%"></div>
+              <div id="bar-v" class="seg videos" style="width:40%"></div>
+              <div id="bar-o" class="seg outdoors" style="width:30%"></div>
+              <div id="bar-p" class="seg redes" style="width:20%"></div>
+              <div id="bar-t" class="seg tv" style="width:10%"></div>
             </div>
             <div style="display:flex;justify-content:space-between;margin-top:8px;color:var(--muted-2);font-size:0.9rem">
               <span>Vídeos</span><span>Outdoors</span><span>Redes</span><span>TV</span>
             </div>
           </div>
 
-          <table class="summary-table" style="width:100%;margin-top:8px">
-            <tbody>
-              <tr><th style="text-align:left;color:#fff;padding:8px 6px">Valor utilizado</th><td id="s-used" style="color:var(--muted-2);padding:8px 6px">—</td></tr>
-              <tr><th style="text-align:left;color:#fff;padding:8px 6px">Valor residual</th><td id="s-left" style="color:var(--muted-2);padding:8px 6px">—</td></tr>
-            </tbody>
-          </table>
-
-          <div style="margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between">
-            <button id="btn-whatsapp" class="btn btn-primary" aria-label="Falar com consultor via WhatsApp">Falar via WhatsApp</button>
-            <button id="btn-copy" class="btn btn-ghost" title="Copiar resumo">Copiar</button>
+          <div style="margin-top:12px;display:flex;gap:8px;justify-content:space-between">
+            <button id="btn-whatsapp-calc" class="btn btn-primary">Falar via WhatsApp</button>
+            <button id="btn-copy-calc" class="btn btn-outline">Copiar resumo</button>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- TALENTOS (compact) -->
-    <section id="talentos" class="container" aria-labelledby="talentos-title" data-reveal>
-      <h2 id="talentos-title">Talentos</h2>
-      <div class="cards-grid stagger" role="list" aria-label="Talentos">
-        <article class="card" role="listitem"><h3>Patrícia Ferrante</h3><p class="muted">Criadora de conteúdo — lifestyle</p></article>
-        <article class="card" role="listitem"><h3>Camila Amoedo</h3><p class="muted">Influenciadora — bem-estar</p></article>
+    <!-- CLIENTS & TESTIMONIALS -->
+    <section id="provas" class="container" data-reveal data-theme="dark-purple">
+      <div class="section-head"><h2>Clientes & Provas</h2><p class="muted">Algumas marcas que confiaram na nossa entrega.</p></div>
+
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div class="client-logo">LOGO</div>
+        <div class="client-logo">LOGO</div>
+        <div class="client-logo">LOGO</div>
+        <div class="client-logo">LOGO</div>
+      </div>
+
+      <div style="margin-top:12px" class="testimonials">
+        <div class="testimonial" data-reveal>
+          <strong style="color:#fff">"A Orb transformou nossa campanha — resultados além do esperado."</strong>
+          <div class="muted" style="margin-top:6px">— Cliente Satisfeito, CEO</div>
+        </div>
+        <div class="testimonial" data-reveal>
+          <strong style="color:#fff">"Timing, execução e acompanhamento: nível agência internacional."</strong>
+          <div class="muted" style="margin-top:6px">— Diretor de Marketing</div>
+        </div>
       </div>
     </section>
 
-    <!-- CONTATO (melhorado) -->
-    <section id="contato" class="container" aria-labelledby="contato-title" data-reveal>
-      <h2 id="contato-title">Contato</h2>
-      <p class="muted">Fale conosco via WhatsApp ou use o fallback que copia a mensagem para o clipboard.</p>
+    <!-- CONTACT (improved) -->
+    <section id="contato" class="container" data-reveal data-theme="mid-purple">
+      <div class="section-head"><h2>Contato</h2><p class="muted">Fale conosco via WhatsApp ou copie a mensagem pronta.</p></div>
 
-      <form id="contact-form" class="contact-form" aria-describedby="contact-help" novalidate>
-        <div id="contact-help" class="muted" style="font-size:0.9rem">Preencha os campos e clique em "Enviar via WhatsApp". O checkbox de consentimento é necessário.</div>
-
-        <div class="contact-grid" style="margin-top:12px">
-          <div><label for="c-nome">Nome</label><input id="c-nome" name="nome" type="text" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff" required /></div>
-          <div><label for="c-telefone">Telefone</label><input id="c-telefone" name="telefone" type="tel" inputmode="tel" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff" /></div>
-          <div class="full"><label for="c-mensagem">Mensagem</label><textarea id="c-mensagem" name="mensagem" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff"></textarea></div>
-
-          <!-- honeypot (anti-spam) -->
-          <div style="display:none"><label for="hp">Leave this empty</label><input id="hp" name="hp" type="text" /></div>
-
-          <div class="full">
-            <label class="consent"><input id="consent" type="checkbox" required /> Eu concordo em ser contactado(a) por Orb Group.</label>
+      <div class="contact-panel">
+        <form id="contactForm" class="contact-form" aria-label="Formulário de contato">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <input id="cf-name" name="name" placeholder="Nome" required />
+            <input id="cf-phone" name="phone" placeholder="Telefone (opcional)" inputmode="tel" />
           </div>
+          <div style="margin-top:8px"><textarea id="cf-msg" name="message" placeholder="Como podemos ajudar?" /></div>
 
-          <div class="full" style="display:flex;gap:8px;justify-content:flex-end">
-            <button type="submit" id="btn-contact-whatsapp" class="btn btn-primary">Enviar via WhatsApp</button>
-            <button type="button" id="btn-contact-copy" class="btn btn-ghost">Copiar mensagem</button>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+            <label style="display:flex;gap:8px;align-items:center;font-size:0.9rem">
+              <input id="cf-consent" type="checkbox" required /> Concordo em ser contactado(a)
+            </label>
+
+            <div style="margin-left:auto;display:flex;gap:8px">
+              <button id="cf-send" class="btn btn-primary" type="submit">Enviar via WhatsApp</button>
+              <button id="cf-copy" class="btn btn-outline" type="button">Copiar mensagem</button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+
+        <aside class="summary-panel" aria-hidden="false">
+          <div style="font-weight:800;color:#fff">Agende uma conversa</div>
+          <div class="muted" style="margin-top:8px">Atendimento rápido via WhatsApp. Preencha o formulário ou envie um resumo direto.</div>
+          <div style="margin-top:auto"><button id="cf-whatsapp" class="btn btn-primary">Abrir WhatsApp</button></div>
+        </aside>
+      </div>
     </section>
   </main>
 
@@ -421,395 +448,278 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <!-- FOOTER -->
-  <footer style="padding:18px 0;color:var(--muted-2);text-align:center">
+  <footer style="padding:28px 0;color:var(--muted-2);text-align:center">
     © <span id="year"></span> Orb Group — Todos os direitos reservados
   </footer>
 
 <script>
+/* =========================
+   SCRIPT: animações bidirecionais, contador, calculadora, contato
+   Substitua WHATSAPP_NUMBER_HERE pelo número em formato internacional (ex: 5511999999999)
+   ========================= */
 (function(){
   'use strict';
-
-  /* ========== CONFIG ========== */
-  const WHATSAPP_NUMBER = 'WHATSAPP_NUMBER_HERE'; // <-- substituir por 5511999999999
+  const WHATSAPP = 'WHATSAPP_NUMBER_HERE';
   const ROE = 3.5;
   const COSTS = { video:250, outdoor:600, post:75, spot:5000 };
-  const CONSULTING_PERCENT = 0.05;
+  const CONSULTING_PCT = 0.05;
 
-  /* ========== HELPERS ========== */
-  const $ = sel => document.querySelector(sel);
-  const $$ = sel => Array.from(document.querySelectorAll(sel));
-  const fmtBRL = value => {
-    const n = Number(value) || 0;
-    return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n);
-  };
-  const onlyDigits = v => String(v || '').replace(/\D/g,'');
-  const parseCurrency = (str) => {
-    // '50.000,00' -> 50000
-    if (!str) return 0;
-    const digits = onlyDigits(str);
-    if (!digits) return 0;
-    // assume last two digits are cents
-    const num = Number(digits) / 100;
-    return Number.isFinite(num) ? num : 0;
-  };
-  const debounce = (fn,wait=220) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),wait); }; };
+  // helpers
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const fmtBRL = v => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(Number(v)||0);
+  const onlyNums = s => (s||'').replace(/\D/g,'');
+  const parseCurrency = s => { const d = onlyNums(s); if(!d) return 0; return Number(d)/100; };
 
-  /* ========== ELEMENTS ========== */
-  const inputOrc = $('#orcamento');
-  const preset = $('#preset');
-  const toggleAdvanced = $('#toggle-advanced');
-  const advanced = $('#advanced');
-  const rangeVideo = $('#p-videos'), rangeOut = $('#p-outdoors'), rangePosts = $('#p-posts'), rangeTv = $('#p-tv');
-  const outVideo = $('#out-videos'), outOut = $('#out-outdoors'), outPosts = $('#out-posts'), outTv = $('#out-tv');
-  const advSumLabel = $('#advanced-sum');
-  const addConsult = $('#add-consult');
-
-  const vBudget = $('#v-budget'), vReturn = $('#v-return'), vUsed = $('#v-used');
-  const dVideos = $('#d-videos'), dOutdoors = $('#d-outdoors'), dPosts = $('#d-posts'), dSpots = $('#d-spots');
-  const barVideos = $('#bar-videos'), barOutdoors = $('#bar-outdoors'), barPosts = $('#bar-posts'), barTv = $('#bar-tv');
-
-  const btnShare = $('#btn-share'), btnPrint = $('#btn-print'), btnWhatsapp = $('#btn-whatsapp'), btnCopy = $('#btn-copy');
-
-  const contactForm = $('#contact-form'), btnContactWhatsapp = $('#btn-contact-whatsapp'), btnContactCopy = $('#btn-contact-copy');
-
+  // toast
   const toast = $('#toast');
-  const yearSpan = $('#year'); yearSpan.textContent = new Date().getFullYear();
-
-  /* ========== INITIAL STATE ========== */
-  let allocation = { videos:40, outdoors:30, posts:20, tv:10 }; // default
-  let currentBudget = 0;
-
-  // Initialize outputs
-  function setAdvancedUIFromAllocation(a){
-    rangeVideo.value = Math.round(a.videos); outVideo.textContent = Math.round(a.videos);
-    rangeOut.value = Math.round(a.outdoors); outOut.textContent = Math.round(a.outdoors);
-    rangePosts.value = Math.round(a.posts); outPosts.textContent = Math.round(a.posts);
-    rangeTv.value = Math.round(a.tv); outTv.textContent = Math.round(a.tv);
-    advSumLabel.textContent = `Soma: ${Math.round(a.videos + a.outdoors + a.posts + a.tv)}%`;
+  let toastTimer = null;
+  function showToast(msg, ms=3000){
+    toast.textContent = msg; toast.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(()=> toast.classList.remove('show'), ms);
   }
-  setAdvancedUIFromAllocation(allocation);
-  updateSummaryUI(allocation, 0);
 
-  /* ========== INPUT FORMATTER (currency mask while typing) ========== */
-  inputOrc.addEventListener('input', (e) => {
-    const raw = e.target.value;
-    const digits = onlyDigits(raw);
-    // limit to reasonably large number
-    const limited = digits.slice(0,12);
-    // treat last 2 digits as cents
-    const intVal = Number(limited) || 0;
-    const display = (intVal === 0) ? '' : fmtBRL(intVal/100);
-    e.target.value = display;
-    // live update (debounced)
-    onBudgetChangeDebounced();
-  });
-
-  // allow paste of plain numbers
-  inputOrc.addEventListener('paste', e => {
-    e.preventDefault();
-    const text = (e.clipboardData || window.clipboardData).getData('text');
-    const digits = onlyDigits(text);
-    const intVal = Number(digits) || 0;
-    inputOrc.value = intVal ? fmtBRL(intVal/100) : '';
-    onBudgetChangeDebounced();
-  });
-
-  /* ========== PRESET handling ========== */
-  preset.addEventListener('change', () => {
-    const key = preset.value;
-    if (key === 'recomendada') allocation = { videos:40, outdoors:30, posts:20, tv:10 };
-    else if (key === 'local') allocation = { videos:50, outdoors:30, posts:15, tv:5 };
-    else if (key === 'nacional') allocation = { videos:35, outdoors:35, posts:20, tv:10 };
-    else if (key === 'lancamento') allocation = { videos:45, outdoors:10, posts:30, tv:15 };
-    else if (key === 'performance') allocation = { videos:30, outdoors:20, posts:40, tv:10 };
-    // update UI
-    if (!advanced.hidden) setAdvancedUIFromAllocation(allocation);
-    updateSummaryUI(allocation, currentBudget);
-  });
-
-  /* ========== ADVANCED toggle & ranges ========== */
-  toggleAdvanced.addEventListener('click', () => {
-    const open = !advanced.hidden;
-    if (open) {
-      // close with exit animation: add hidden class then hide after transition
-      advanced.classList.add('is-hidden');
-      setTimeout(()=>{ advanced.hidden = true; advanced.classList.remove('is-hidden'); }, 260);
-      toggleAdvanced.textContent = 'Avançado';
-    } else {
-      advanced.hidden = false;
-      // play entrance by toggling visible class
-      advanced.classList.remove('is-hidden');
-      advanced.animate([{opacity:0, transform:'translateY(8px)'},{opacity:1, transform:'none'}], {duration:320, easing:'ease-out'});
-      toggleAdvanced.textContent = 'Fechar';
-      setAdvancedUIFromAllocation(allocation);
-    }
-  });
-
-  // ranges listeners (update allocation preview)
-  [rangeVideo, rangeOut, rangePosts, rangeTv].forEach(el => {
-    if (!el) return;
-    el.addEventListener('input', () => {
-      const a = {
-        videos: Number(rangeVideo.value),
-        outdoors: Number(rangeOut.value),
-        posts: Number(rangePosts.value),
-        tv: Number(rangeTv.value)
-      };
-      advSumLabel.textContent = `Soma: ${a.videos + a.outdoors + a.posts + a.tv}%`;
-      outVideo.textContent = a.videos; outOut.textContent = a.outdoors; outPosts.textContent = a.posts; outTv.textContent = a.tv;
-      // don't immediately set allocation until debounce, but update bars for feedback
-      updateAllocationBars(a);
-      // store temporary
-      allocation = a;
-      onBudgetChangeDebounced();
+  // Reveal (ida & volta)
+  const revealObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      const el = en.target;
+      if(en.isIntersecting && en.intersectionRatio>0.12){
+        el.classList.add('visible'); el.classList.remove('leaving');
+        // if stagger, reveal children
+        if(el.classList.contains('stagger')) el.classList.add('visible');
+      } else {
+        el.classList.remove('visible'); el.classList.add('leaving');
+        if(el.classList.contains('stagger')) el.classList.remove('visible');
+      }
+      // theme change by data-theme
+      if(el.dataset.theme && en.isIntersecting){
+        applyTheme(el.dataset.theme);
+      }
     });
+  },{root:null,rootMargin:'0px 0px -8% 0px',threshold:[0,0.12,0.4]});
+
+  $$('[data-reveal]').forEach(el=> revealObserver.observe(el));
+
+  // theme mapping (background gradients by section)
+  function applyTheme(name){
+    switch(name){
+      case 'gold-accent':
+        document.body.style.background = 'linear-gradient(180deg,#2b0b2f,#3b1f66)';
+        break;
+      case 'deep-purple':
+        document.body.style.background = 'linear-gradient(180deg,#10021b,#2a0b3a)';
+        break;
+      case 'mid-purple':
+        document.body.style.background = 'linear-gradient(180deg,#120a1a,#32184a)';
+        break;
+      default:
+        document.body.style.background = 'linear-gradient(180deg,#0f0716,#2e0f3a)';
+    }
+  }
+
+  // counters in hero
+  function animateNumber(el, target, duration=900){
+    if(!el) return;
+    let start = 0; const startTime = performance.now();
+    function tick(now){
+      const t = Math.min(1,(now-startTime)/duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const val = Math.round(start + (target - start)*eased);
+      el.textContent = val;
+      if(t<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  $$('[data-target]').forEach(el=>{
+    const target = Number(el.dataset.target) || 0;
+    // animate when visible first time
+    const ro = new IntersectionObserver((entries,obs)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){ animateNumber(el,target); obs.unobserve(el); }
+      });
+    },{threshold:0.2});
+    ro.observe(el);
   });
 
-  /* ========== CORE CALCULATION (simple + performant) ========== */
-  function normalizeAllocation(a){
+  // CALCULADORA: elements
+  const inputCalc = $('#calc-orc'), preset = $('#calc-preset'), calcConsult = $('#calc-consult');
+  const kOrc = $('#k-orc'), kRet = $('#k-ret'), kUsed = $('#k-used');
+  const rVideos = $('#r-videos'), rOutdoors = $('#r-outdoors'), rPosts = $('#r-posts'), rSpots = $('#r-spots');
+  const barV = $('#bar-v'), barO = $('#bar-o'), barP = $('#bar-p'), barT = $('#bar-t');
+  const btnWhatsCalc = $('#btn-whatsapp-calc'), btnCopyCalc = $('#btn-copy-calc'), btnCalcShare = $('#calc-share');
+
+  // default allocation
+  let allocation = { videos:40, outdoors:30, posts:20, tv:10 };
+  function setAllocationByPreset(key){
+    if(key==='recomendada') allocation={videos:40,outdoors:30,posts:20,tv:10};
+    else if(key==='local') allocation={videos:50,outdoors:30,posts:15,tv:5};
+    else if(key==='nacional') allocation={videos:35,outdoors:35,posts:20,tv:10};
+    else if(key==='lancamento') allocation={videos:45,outdoors:10,posts:30,tv:15};
+    else if(key==='performance') allocation={videos:30,outdoors:20,posts:40,tv:10};
+    updateAllocationBars(allocation);
+  }
+  preset.addEventListener('change',()=>{ setAllocationByPreset(preset.value); calculateAndRender(); });
+
+  // parse & render
+  function calculateAndRender(){
+    const budget = parseCurrency(inputCalc.value);
+    // validate
+    if(!budget || budget<=0){
+      kOrc.textContent='—'; kRet.textContent='—'; kUsed.textContent='—';
+      rVideos.textContent='0'; rOutdoors.textContent='0'; rPosts.textContent='0'; rSpots.textContent='0';
+      return;
+    }
+    const a = normalize(allocation);
+    const valV = budget * (a.videos/100);
+    const valO = budget * (a.outdoors/100);
+    const valP = budget * (a.posts/100);
+    const valT = budget * (a.tv/100);
+
+    const nV = Math.floor(valV / COSTS.video);
+    const nO = Math.floor(valO / COSTS.outdoor);
+    const nP = Math.floor(valP / COSTS.post);
+    const nT = Math.floor(valT / COSTS.spot);
+
+    let used = (nV*COSTS.video)+(nO*COSTS.outdoor)+(nP*COSTS.post)+(nT*COSTS.spot);
+    if(calcConsult.checked){ used += Math.round(budget*CONSULTING_PCT*100)/100; }
+
+    const leftover = Math.max(0, budget - used);
+    const ret = budget * ROE;
+
+    kOrc.textContent = fmtBRL(budget);
+    kRet.textContent = fmtBRL(ret);
+    kUsed.textContent = fmtBRL(used);
+
+    rVideos.textContent = String(nV); rOutdoors.textContent = String(nO); rPosts.textContent = String(nP); rSpots.textContent = String(nT);
+    $('#s-used')?.textContent && ($('#s-used').textContent = fmtBRL(used));
+    $('#s-left')?.textContent && ($('#s-left').textContent = fmtBRL(leftover));
+    updateAllocationBars(a);
+  }
+
+  function normalize(a){
     const sum = a.videos + a.outdoors + a.posts + a.tv;
-    if (sum === 0) return {videos:0,outdoors:0,posts:0,tv:0};
-    if (Math.abs(sum - 100) > 0.001){
-      return {
-        videos: (a.videos/sum)*100,
-        outdoors: (a.outdoors/sum)*100,
-        posts: (a.posts/sum)*100,
-        tv: (a.tv/sum)*100
-      };
+    if(sum===0) return {videos:0,outdoors:0,posts:0,tv:0};
+    if(Math.abs(sum-100)>0.001){
+      return { videos:(a.videos/sum)*100, outdoors:(a.outdoors/sum)*100, posts:(a.posts/sum)*100, tv:(a.tv/sum)*100 };
     }
     return a;
   }
 
-  function calculate(budget, alloc, includeConsulting){
-    const a = normalizeAllocation(alloc);
-    const valVideos = budget * (a.videos/100);
-    const valOut = budget * (a.outdoors/100);
-    const valPosts = budget * (a.posts/100);
-    const valTv = budget * (a.tv/100);
-
-    const nVideos = Math.floor(valVideos / COSTS.video);
-    const nOutdoors = Math.floor(valOut / COSTS.outdoor);
-    const nPosts = Math.floor(valPosts / COSTS.post);
-    const nSpots = Math.floor(valTv / COSTS.spot);
-
-    let used = (nVideos * COSTS.video) + (nOutdoors * COSTS.outdoor) + (nPosts * COSTS.post) + (nSpots * COSTS.spot);
-    let consult = 0;
-    if (includeConsulting) { consult = Math.round(budget * CONSULTING_PERCENT * 100) / 100; used += consult; }
-
-    const leftover = Math.max(0, budget - used);
-    const estimatedReturn = budget * ROE;
-
-    return {
-      allocation: a, valVideos, valOut, valPosts, valTv,
-      nVideos, nOutdoors, nPosts, nSpots, used, consult, leftover, estimatedReturn
-    };
-  }
-
-  /* ========== UI UPDATES (animated counts) ========== */
-  function animateCount(el, endValue, duration=650, formatter=v=>v){
-    if (!el) return;
-    const start = 0;
-    const startTime = performance.now();
-    function tick(now){
-      const t = Math.min(1,(now-startTime)/duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = Math.round(start + (endValue - start) * eased);
-      el.textContent = formatter(value);
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  function updateSummaryUI(alloc, budget){
-    currentBudget = budget || 0;
-    const res = calculate(budget || 0, alloc, addConsult.checked);
-    // KPIs
-    animateCount(vBudget, Math.round(budget), 500, v => fmtBRL(v));
-    animateCount(vReturn, Math.round(res.estimatedReturn), 700, v => fmtBRL(v));
-    // used (animate as number but formatted)
-    animateCount(vUsed, Math.round(res.used), 600, v => fmtBRL(v));
-
-    // deliverables (instant for clarity)
-    dVideos.textContent = String(res.nVideos);
-    dOutdoors.textContent = String(res.nOutdoors);
-    dPosts.textContent = String(res.nPosts);
-    dSpots.textContent = String(res.nSpots);
-
-    // summary table
-    $('#s-used').textContent = fmtBRL(res.used);
-    $('#s-left').textContent = fmtBRL(res.leftover);
-
-    // allocation bars
-    updateAllocationBars(res.allocation);
-  }
-
   function updateAllocationBars(a){
-    barVideos.style.width = `${Math.round(a.videos)}%`;
-    barOutdoors.style.width = `${Math.round(a.outdoors)}%`;
-    barPosts.style.width = `${Math.round(a.posts)}%`;
-    barTv.style.width = `${Math.round(a.tv)}%`;
+    barV.style.width = `${Math.round(a.videos)}%`;
+    barO.style.width = `${Math.round(a.outdoors)}%`;
+    barP.style.width = `${Math.round(a.posts)}%`;
+    barT.style.width = `${Math.round(a.tv)}%`;
   }
 
-  /* ========== BUDGET change (debounced live preview) ========== */
-  function onBudgetChange(){
-    const parsed = parseCurrency(inputOrc.value);
-    currentBudget = parsed;
-    // validation minimal
-    if (!parsed || parsed <= 0){
-      $('#orc-error').style.display = 'block';
-      $('#orc-error').textContent = 'Informe um orçamento válido (maior que R$ 0).';
-      updateSummaryUI(allocation, 0);
-      return;
-    } else {
-      $('#orc-error').style.display = 'none';
+  // live debounce
+  let calcTimer = null;
+  inputCalc.addEventListener('input', ()=>{ clearTimeout(calcTimer); calcTimer=setTimeout(calculateAndRender,220); });
+
+  // copy & whatsapp from calc
+  function buildCalcMessage(){
+    const budget = parseCurrency(inputCalc.value);
+    const a = normalize(allocation);
+    const res = calculateSimple(budget,a,calcConsult.checked);
+    return [
+      'Interesse — Orb Group',
+      `Orçamento: ${fmtBRL(budget)}`,
+      `Retorno estimado (ROE ${ROE}×): ${fmtBRL(res.retorno)}`,
+      `Entregáveis: Vídeos ${res.videos}, Outdoors ${res.outdoors}, Posts ${res.posts}, Spots ${res.spots}`,
+      `Valor residual: ${fmtBRL(res.leftover)}`
+    ].join('\n');
+  }
+
+  function calculateSimple(budget,a,consult){
+    const valV = budget * (a.videos/100);
+    const valO = budget * (a.outdoors/100);
+    const valP = budget * (a.posts/100);
+    const valT = budget * (a.tv/100);
+    const nV = Math.floor(valV / COSTS.video);
+    const nO = Math.floor(valO / COSTS.outdoor);
+    const nP = Math.floor(valP / COSTS.post);
+    const nT = Math.floor(valT / COSTS.spot);
+    let used = (nV*COSTS.video)+(nO*COSTS.outdoor)+(nP*COSTS.post)+(nT*COSTS.spot);
+    if(consult) used += Math.round(budget*CONSULTING_PCT*100)/100;
+    const leftover = Math.max(0, budget - used);
+    return { videos:nV, outdoors:nO, posts:nP, spots:nT, used, leftover, retorno:budget*ROE };
+  }
+
+  btnCopyCalc.addEventListener('click', ()=>{
+    const msg = buildCalcMessage();
+    navigator.clipboard?.writeText(msg).then(()=> showToast('Resumo copiado')).catch(()=> showToast('Não foi possível copiar'));
+  });
+  btnWhatsCalc.addEventListener('click', ()=>{
+    const msg = buildCalcMessage();
+    window.open(buildWhatsAppUrl(WHATSAPP, msg), '_blank', 'noopener');
+  });
+  btnCalcShare.addEventListener('click', ()=>{
+    const msg = buildCalcMessage();
+    window.open(buildWhatsAppUrl(WHATSAPP, msg), '_blank', 'noopener');
+  });
+
+  // CONTACT form
+  const contactForm = $('#contactForm'), cfCopy = $('#cf-copy'), cfSend = $('#cf-send'), cfWhats = $('#cf-whatsapp');
+  contactForm?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    // simple validation & honeypot
+    if($('#cf-consent') && !$('#cf-consent').checked){ showToast('Aceite o contato para continuar'); return; }
+    if($('#hp') && $('#hp').value){ showToast('Envio bloqueado'); return; }
+    const name = $('#cf-name').value || 'Sem nome', phone = $('#cf-phone').value || '', msg = $('#cf-msg').value || '';
+    const calcSummary = buildCalcMessage();
+    const message = [
+      'Contato — Orb Group',
+      `Nome: ${name}`,
+      phone?`Telefone: ${phone}`:null,
+      `Mensagem: ${msg||'-'}`,
+      '',
+      'Resumo calculadora:',
+      calcSummary
+    ].filter(Boolean).join('\n');
+
+    const win = window.open(buildWhatsAppUrl(WHATSAPP, message), '_blank', 'noopener');
+    if(win) showToast('Abrindo WhatsApp...');
+    else {
+      navigator.clipboard?.writeText(message).then(()=> showToast('Mensagem copiada — cole no WhatsApp')).catch(()=> showToast('Falha ao abrir WhatsApp'));
     }
-    updateSummaryUI(allocation, parsed);
-  }
-  const onBudgetChangeDebounced = debounce(onBudgetChange, 260);
+  });
 
-  /* ========== BUTTONS: share / print / whatsapp / copy ========= */
+  cfCopy?.addEventListener('click', ()=>{
+    const name = $('#cf-name').value || 'Sem nome', phone = $('#cf-phone').value || '', msg = $('#cf-msg').value || '';
+    const message = [
+      'Contato — Orb Group',
+      `Nome: ${name}`,
+      phone?`Telefone: ${phone}`:null,
+      `Mensagem: ${msg||'-'}`,
+      '',
+      'Resumo calculadora:',
+      buildCalcMessage()
+    ].filter(Boolean).join('\n');
+    navigator.clipboard?.writeText(message).then(()=> showToast('Mensagem copiada')).catch(()=> showToast('Não foi possível copiar'));
+  });
+
+  cfWhats?.addEventListener('click', ()=>{
+    const message = 'Olá, quero conversar sobre serviços — Orb Group';
+    window.open(buildWhatsAppUrl(WHATSAPP, message), '_blank', 'noopener');
+  });
+
+  // helpers
   function buildWhatsAppUrl(number, message){
-    const num = (number || '').replace(/\D/g,'');
-    const text = encodeURIComponent(message || '');
+    const num = (number||'').replace(/\D/g,'');
+    const text = encodeURIComponent(message||'');
     return num ? `https://wa.me/${num}?text=${text}` : `https://wa.me/?text=${text}`;
   }
 
-  function buildSummaryMessage(){
-    const res = calculate(currentBudget || 0, allocation, addConsult.checked);
-    const lines = [
-      `Interesse — Orb Group`,
-      `Orçamento: ${fmtBRL(currentBudget)}`,
-      `Retorno estimado (ROE ${ROE}×): ${fmtBRL(res.estimatedReturn)}`,
-      `Entregáveis: Vídeos ${res.nVideos}, Outdoors ${res.nOutdoors}, Posts ${res.nPosts}, Spots TV ${res.nSpots}`,
-      `Valor residual: ${fmtBRL(res.leftover)}`
-    ];
-    return lines.join('\n');
-  }
+  // init: set year & basic state
+  $('#year').textContent = new Date().getFullYear();
+  // set default allocation visually
+  updateAllocationBars(allocation);
 
-  btnShare.addEventListener('click', () => {
-    if (!currentBudget || currentBudget <= 0){
-      showToast('Informe um orçamento válido antes de compartilhar.');
-      inputOrc.focus(); return;
-    }
-    const msg = buildSummaryMessage();
-    window.open(buildWhatsAppUrl(WHATSAPP_NUMBER, msg), '_blank', 'noopener');
-  });
+  // small UX: Enter on calc focuses whatsapp share
+  inputCalc?.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); calculateAndRender(); setTimeout(()=> btnWhatsCalc.focus(), 150); } });
 
-  btnWhatsapp.addEventListener('click', () => {
-    const msg = buildSummaryMessage();
-    window.open(buildWhatsAppUrl(WHATSAPP_NUMBER, msg), '_blank', 'noopener');
-  });
-
-  btnCopy.addEventListener('click', () => {
-    const msg = buildSummaryMessage();
-    navigator.clipboard?.writeText(msg).then(()=>showToast('Resumo copiado para área de transferência')).catch(()=>showToast('Não foi possível copiar. Abra WhatsApp manualmente.'));
-  });
-
-  btnPrint.addEventListener('click', ()=> window.print());
-
-  // Contact form actions
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    // honeypot anti-spam
-    if ($('#hp').value) { showToast('Envio bloqueado (provável spam).'); return; }
-    if (!$('#consent').checked) { showToast('Você precisa aceitar o contato para prosseguir.'); return; }
-    const name = $('#c-nome').value.trim() || 'Sem nome';
-    const phone = $('#c-telefone').value.trim() || '';
-    const msgUser = $('#c-mensagem').value.trim() || '';
-    const summary = buildSummaryMessage();
-    const message = [
-      `Contato — Orb Group`,
-      `Nome: ${name}`,
-      phone ? `Telefone: ${phone}` : null,
-      `Mensagem: ${msgUser || '-'}`,
-      '',
-      'Resumo calculadora:',
-      summary
-    ].filter(Boolean).join('\n');
-
-    // Try to open WhatsApp
-    const waUrl = buildWhatsAppUrl(WHATSAPP_NUMBER, message);
-    const opened = window.open(waUrl, '_blank', 'noopener');
-    if (opened) {
-      showToast('Abrindo WhatsApp...');
-    } else {
-      // fallback copy
-      navigator.clipboard?.writeText(message).then(()=> {
-        showToast('Mensagem copiada. Cole no WhatsApp para enviar.');
-      }).catch(()=> {
-        showToast('Não foi possível abrir WhatsApp nem copiar mensagem. Tente manualmente.');
-      });
-    }
-  });
-
-  btnContactCopy.addEventListener('click', () => {
-    const name = $('#c-nome').value.trim() || 'Sem nome';
-    const phone = $('#c-telefone').value.trim() || '';
-    const msgUser = $('#c-mensagem').value.trim() || '';
-    const message = [
-      `Contato — Orb Group`,
-      `Nome: ${name}`,
-      phone ? `Telefone: ${phone}` : null,
-      `Mensagem: ${msgUser || '-'}`,
-      '',
-      'Resumo calculadora:',
-      buildSummaryMessage()
-    ].filter(Boolean).join('\n');
-    navigator.clipboard?.writeText(message).then(()=> showToast('Mensagem copiada para a área de transferência.')).catch(()=> showToast('Não foi possível copiar.'));
-  });
-
-  /* ========== TOAST helper ========== */
-  let toastTimer = null;
-  function showToast(text, ms=3200){
-    toast.textContent = text;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(()=> { toast.classList.remove('show'); }, ms);
-  }
-
-  /* ========== IntersectionObserver reveal (ida e volta) ========== */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting && entry.intersectionRatio > 0.12){
-        el.classList.add('is-visible');
-        el.classList.remove('is-hidden');
-        // for stagger containers, add class to play child animations
-        if (el.classList.contains('stagger')) el.classList.add('is-visible');
-      } else {
-        // when element goes out, play exit (ida e volta)
-        el.classList.remove('is-visible');
-        el.classList.add('is-hidden');
-        if (el.classList.contains('stagger')) el.classList.remove('is-visible');
-      }
-    });
-  }, { root:null, rootMargin:'0px 0px -8% 0px', threshold:[0,0.12,0.4] });
-
-  $$('[data-reveal], .stagger').forEach(el => io.observe(el));
-
-  /* ========== Accessibility: keyboard submit on Enter for budget => focus share ========= */
-  inputOrc.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      onBudgetChangeDebounced();
-      setTimeout(()=> btnShare.focus(), 200);
-    }
-  });
-
-  /* ========== Init: set default allocation & small warnings ========== */
-  function init(){
-    allocation = { videos:40, outdoors:30, posts:20, tv:10 };
-    setAdvancedUIFromAllocation(allocation);
-    updateAllocationBars(allocation);
-    // console reminder
-    if (!WHATSAPP_NUMBER || WHATSAPP_NUMBER.includes('WHATSAPP_NUMBER_HERE')){
-      console.warn('ATENÇÃO: substitua WHATSAPP_NUMBER_HERE no script pelo número (ex: 5511999999999) para habilitar WhatsApp.');
-    }
-  }
-  init();
-
-  /* ========== Expose for debugging (optional) ========== */
-  window._orb = { calculate, allocation };
+  // console hint
+  if(!WHATSAPP || WHATSAPP.includes('WHATSAPP_NUMBER_HERE')) console.warn('Substitua WHATSAPP_NUMBER_HERE pelo número em formato internacional (ex: 5511999999999).');
 
 })();
 </script>
