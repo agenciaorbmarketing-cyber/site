@@ -92,68 +92,21 @@ transform:translateY(-4px);
 box-shadow:0 20px 40px rgba(255,200,0,0.25);
 }
 
-.secondary{
-background:transparent;
-border:1px solid rgba(255,255,255,0.2);
-color:white;
-}
-
-.stats{
-margin-top:60px;
-display:flex;
-gap:60px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.stat{
-text-align:center;
-}
-
-.stat strong{
-font-size:28px;
-color:#b388ff;
-}
-
 .section{
 padding:120px 0;
 }
 
-.services{
+.results-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.service{
-background:rgba(255,255,255,0.03);
-padding:35px;
-border-radius:16px;
-transition:all .35s ease;
-}
-
-.service:hover{
-transform:translateY(-6px);
-background:rgba(255,255,255,0.05);
-}
-
-.results{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
+gap:40px;
+margin-top:60px;
 }
 
 .result{
 background:rgba(255,255,255,0.03);
 padding:30px;
 border-radius:14px;
-text-align:center;
-}
-
-.result h3{
-font-size:34px;
-color:#ffd84a;
-margin-bottom:10px;
 }
 
 .testimonials{
@@ -164,104 +117,113 @@ gap:30px;
 
 .testimonial{
 background:rgba(255,255,255,0.03);
-padding:30px;
-border-radius:14px;
-opacity:.9;
+padding:25px;
+border-radius:12px;
 }
 
 .final-cta{
-padding:140px 20px;
 text-align:center;
-}
-
-.final-cta h2{
-font-size:52px;
-margin-bottom:30px;
+padding:140px 20px;
 }
 
 .footer{
 text-align:center;
-padding:40px 20px;
-opacity:.5;
-font-size:14px;
+padding:30px;
+opacity:0.6;
 }
 
-/* REVEAL */
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-}
-
-.visible{
-opacity:1;
-transform:none;
-}
-
-/* CALCULADORA */
+/* ---------- CALCULADORA ---------- */
 
 .calculator{
+background:
+linear-gradient(180deg,rgba(120,0,255,0.12),transparent),
+#0b0b0b;
+border-radius:20px;
+padding:60px;
 margin-top:60px;
-background:rgba(255,255,255,0.03);
-padding:50px;
-border-radius:18px;
+box-shadow:0 40px 120px rgba(0,0,0,0.5);
 }
 
 .calc-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
-margin-bottom:30px;
+gap:40px;
 }
 
-.calc-grid input,
-.calc-grid select{
-padding:16px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,0.2);
+.calc-inputs{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.input-box{
+background:rgba(255,255,255,0.03);
+padding:20px;
+border-radius:12px;
+}
+
+.input-box label{
+font-size:14px;
+opacity:.7;
+}
+
+.input-box input,
+.input-box select{
+margin-top:8px;
+width:100%;
+padding:14px;
+border-radius:8px;
+border:none;
 background:#111;
 color:white;
 font-size:16px;
 }
 
-.calc-button{
-margin-top:10px;
-}
-
-.calc-results{
-margin-top:50px;
+.results{
 display:none;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(2,1fr);
 gap:20px;
+margin-top:40px;
 }
 
-.metric{
-background:rgba(255,255,255,0.04);
+.result-card{
+background:rgba(255,255,255,0.03);
 padding:25px;
 border-radius:14px;
 }
 
-.metric h4{
-font-size:14px;
-opacity:.7;
-margin-bottom:10px;
-}
-
-.metric strong{
-font-size:28px;
+.result-number{
+font-size:26px;
+margin-top:6px;
 color:#ffd84a;
 }
 
-.calc-cta{
-margin-top:50px;
+.bar{
+height:6px;
+background:#222;
+border-radius:4px;
+margin-top:10px;
+overflow:hidden;
+}
+
+.bar-fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#7c3aed,#ffd84a);
+transition:width 1.5s ease;
+}
+
+.cta-final{
 text-align:center;
+margin-top:60px;
 }
 
 @media(max-width:900px){
 
-.services,
-.results,
+.results-grid{
+grid-template-columns:1fr;
+}
+
 .testimonials{
 grid-template-columns:1fr;
 }
@@ -279,104 +241,20 @@ grid-template-columns:1fr;
 
 <section class="hero">
 
-<h1>
-Crescimento previsível para empresas que querem dominar o mercado
-</h1>
+<h1>Escalamos empresas.<br>Multiplicamos faturamento.</h1>
 
-<p>
-Estratégia, marketing e estrutura comercial para escalar negócios.
-</p>
+<p>Estratégia, criativos e dados para aumentar ticket médio e previsibilidade de vendas.</p>
 
 <div class="cta-buttons">
-<button class="primary">Falar com a Orb</button>
-<button class="secondary">Ver serviços</button>
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<strong>+120</strong>
-<p>clientes atendidos</p>
-</div>
-
-<div class="stat">
-<strong>+R$80M</strong>
-<p>em crescimento gerado</p>
-</div>
-
-<div class="stat">
-<strong>12 países</strong>
-<p>operações atendidas</p>
-</div>
-
+<button class="primary">Agendar diagnóstico</button>
+<button class="secondary">Ver como funciona</button>
 </div>
 
 </section>
 
 <section class="section container reveal">
 
-<h2 style="margin-bottom:40px">Serviços</h2>
-
-<div class="services">
-
-<div class="service">
-<h3>Estratégia de Crescimento</h3>
-<p>Planejamento para escalar receita de forma previsível.</p>
-</div>
-
-<div class="service">
-<h3>Marketing de Performance</h3>
-<p>Campanhas para gerar clientes e expandir mercados.</p>
-</div>
-
-<div class="service">
-<h3>Estrutura Comercial</h3>
-<p>Processos de vendas para crescimento previsível.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section container reveal">
-
-<h2 style="margin-bottom:40px">Calculadora Orb</h2>
-
-<div class="calculator">
-
-<div class="calc-grid">
-
-<input id="investimento" type="number" placeholder="Investimento mensal (R$ 5000)" min="500">
-
-<select id="segmento">
-<option value="geral">Geral</option>
-<option value="alimentacao">Alimentação</option>
-<option value="saude">Saúde</option>
-<option value="educacao">Educação</option>
-<option value="ecommerce">E-commerce</option>
-</select>
-
-</div>
-
-<button class="primary calc-button" onclick="simular()">Simular crescimento</button>
-
-<div class="calc-results" id="resultados"></div>
-
-<div class="calc-cta">
-<button class="primary">Quero aplicar essa estratégia no meu negócio</button>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section container reveal">
-
-<h2 style="margin-bottom:40px">Resultados</h2>
-
-<div class="results">
+<div class="results-grid">
 
 <div class="result">
 <h3>+320%</h3>
@@ -419,6 +297,57 @@ Estratégia, marketing e estrutura comercial para escalar negócios.
 
 </section>
 
+<!-- CALCULADORA ORB -->
+
+<section class="section container">
+
+<h2 style="text-align:center;margin-bottom:40px">Calculadora Orb</h2>
+
+<div class="calculator">
+
+<div class="calc-grid">
+
+<div class="calc-inputs">
+
+<div class="input-box">
+<label>Investimento mensal</label>
+<input id="investment" type="number" placeholder="5000" min="500" max="1000000">
+</div>
+
+<div class="input-box">
+<label>Segmento do negócio</label>
+
+<select id="segment">
+
+<option value="alimentacao">Alimentação</option>
+<option value="saude">Saúde</option>
+<option value="educacao">Educação</option>
+<option value="ecommerce">E-commerce</option>
+<option value="geral">Geral</option>
+
+</select>
+
+</div>
+
+<button class="primary" onclick="simulate()">Simular crescimento</button>
+
+</div>
+
+<div>
+
+<div class="results" id="results"></div>
+
+</div>
+
+</div>
+
+<div class="cta-final" id="ctaFinal" style="display:none">
+<button class="primary">Quero aplicar essa estratégia no meu negócio</button>
+</div>
+
+</div>
+
+</section>
 
 <section class="final-cta reveal">
 
@@ -435,74 +364,124 @@ Crescimento não é sorte.<br>
 Orb Group — atendimento 24h
 </div>
 
-
 <script>
 
+/* CALCULADORA */
+
 const data={
-alimentacao:{imp:45000,click:650,seg:120,lead:100,cpl:13,conv:22,roi:410},
-saude:{imp:31000,click:475,seg:85,lead:25,cpl:60,conv:27,roi:300},
-educacao:{imp:35000,click:575,seg:135,lead:50,cpl:30,conv:5,roi:400},
-ecommerce:{imp:30000,click:650,seg:100,conv:2,roi:350},
-geral:{imp:39000,click:600,seg:110,lead:40,cpl:40,conv:10,roi:350}
-}
 
-function formatar(n){
-return Math.round(n/10)*10
-}
-
-function simular(){
-
-let investimento=document.getElementById("investimento").value
-let segmento=document.getElementById("segmento").value
-
-if(!investimento) return
-
-let base=data[segmento]
-
-let fator=investimento/1000
-
-let roi=base.roi
-
-if(investimento>5000){
-
-let reducao=(investimento-5000)/(300000-5000)
-
-roi=base.roi-(base.roi-200)*reducao
-
-if(roi<200) roi=200
+alimentacao:{imp:45000,click:650,follow:130,leads:100,cpl:13,conv:0.225,roi:410},
+saude:{imp:31000,click:475,follow:85,leads:25,cpl:62,conv:0.275,roi:300},
+educacao:{imp:35000,click:575,follow:135,leads:52,cpl:30,conv:0.055,roi:400},
+ecommerce:{imp:30000,click:650,follow:100,conv:0.02,roi:350},
+geral:{imp:39000,click:600,follow:115,leads:40,cpl:40,conv:0.10,roi:350}
 
 }
 
-let faturamento=investimento*(roi/100)
-
-let html=""
-
-function card(t,v){
-html+=`
-<div class="metric">
-<h4>${t}</h4>
-<strong>${v}</strong>
-</div>`
+function roundSmart(n){
+if(n>10000) return Math.round(n/1000)*1000
+if(n>1000) return Math.round(n/10)*10
+return Math.round(n)
 }
 
-card("Impressões",formatar(base.imp*fator))
-card("Cliques / visitas",formatar(base.click*fator))
-card("Seguidores novos",formatar(base.seg*fator))
-
-if(segmento!=="ecommerce"){
-card("Leads gerados",formatar(base.lead*fator))
-card("CPL médio","R$ "+base.cpl)
+function calcROI(inv,baseROI){
+if(inv<=5000) return baseROI
+let progress=(inv-5000)/(300000-5000)
+let roi=baseROI-(baseROI-200)*progress
+return Math.max(200,roi)
 }
 
-card("Conversão lead → venda",base.conv+"%")
-card("ROI médio",Math.round(roi)+"%")
-card("Novo faturamento projetado","R$ "+formatar(faturamento))
+function animate(el,value){
+let start=0
+let dur=1200
+let startTime=null
 
-let res=document.getElementById("resultados")
-res.innerHTML=html
-res.style.display="grid"
+function step(t){
+if(!startTime) startTime=t
+let p=(t-startTime)/dur
+if(p>1)p=1
+let val=start+(value-start)*p
+el.innerText=Math.round(val)
+if(p<1)requestAnimationFrame(step)
+}
+
+requestAnimationFrame(step)
+}
+
+function simulate(){
+
+let inv=parseFloat(document.getElementById("investment").value)
+if(!inv)return
+
+let seg=document.getElementById("segment").value
+let base=data[seg]
+let mult=inv/1000
+let roi=calcROI(inv,base.roi)
+let faturamento=inv*(roi/100)
+
+let results={
+
+"Impressões":roundSmart(base.imp*mult),
+"Cliques":roundSmart(base.click*mult),
+"Seguidores":roundSmart(base.follow*mult),
+"Conversão":Math.round(base.conv*100)+"%",
+"ROI médio":Math.round(roi)+"%",
+"Faturamento projetado":"R$ "+roundSmart(faturamento)
 
 }
+
+if(seg!=="ecommerce"){
+results["Leads"]=roundSmart(base.leads*mult)
+results["CPL médio"]="R$ "+roundSmart(base.cpl)
+}
+
+renderResults(results)
+
+}
+
+function renderResults(results){
+
+const container=document.getElementById("results")
+container.innerHTML=""
+
+for(let key in results){
+
+let card=document.createElement("div")
+card.className="result-card"
+
+card.innerHTML=`
+<h4>${key}</h4>
+<div class="result-number">0</div>
+<div class="bar">
+<div class="bar-fill"></div>
+</div>
+`
+
+container.appendChild(card)
+
+let num=card.querySelector(".result-number")
+let val=results[key]
+
+if(typeof val==="number"){
+animate(num,val)
+}else{
+num.innerText=val
+}
+
+let bar=card.querySelector(".bar-fill")
+
+setTimeout(()=>{
+bar.style.width=Math.random()*90+10+"%"
+},200)
+
+}
+
+container.style.display="grid"
+document.getElementById("ctaFinal").style.display="block"
+
+}
+
+/* REVEAL ORIGINAL */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
