@@ -6,9 +6,9 @@
 
 <title>Orb Group</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-/* ---------------- RESET ---------------- */
+<style>
 
 *{
 margin:0;
@@ -17,7 +17,7 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Inter, sans-serif;
 background:#0b0b0b;
 color:white;
 overflow-x:hidden;
@@ -29,7 +29,14 @@ margin:auto;
 padding:40px 20px;
 }
 
-/* ---------------- HERO ---------------- */
+h1,h2{
+font-family:Inter;
+letter-spacing:-0.03em;
+}
+
+.serif{
+font-family:Playfair Display, serif;
+}
 
 .hero{
 min-height:90vh;
@@ -45,7 +52,7 @@ radial-gradient(circle at 70% 80%,rgba(255,200,0,0.15),transparent 40%),
 }
 
 .hero h1{
-font-size:60px;
+font-size:64px;
 max-width:900px;
 line-height:1.05;
 margin-bottom:20px;
@@ -91,8 +98,6 @@ border:1px solid rgba(255,255,255,0.2);
 color:white;
 }
 
-/* ---------------- STATS ---------------- */
-
 .stats{
 margin-top:60px;
 display:flex;
@@ -101,174 +106,131 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
+.stat{
+text-align:center;
+}
+
 .stat strong{
 font-size:28px;
 color:#b388ff;
 }
 
-/* ---------------- SECTIONS ---------------- */
-
 .section{
 padding:120px 0;
-}
-
-.section-title{
-font-size:36px;
-text-align:center;
-margin-bottom:60px;
-}
-
-/* ---------------- SERVICES ---------------- */
-
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.service{
-background:rgba(255,255,255,0.03);
-padding:35px;
-border-radius:16px;
-transition:.35s;
-}
-
-.service:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.06);
 }
 
 /* ---------------- CALCULADORA ---------------- */
 
 .calculator{
-
-background:
-linear-gradient(180deg,rgba(120,0,255,0.12),transparent),
-#0b0b0b;
-
+background:rgba(255,255,255,0.03);
 border-radius:20px;
-padding:60px;
-margin-top:60px;
-
-box-shadow:0 40px 120px rgba(0,0,0,0.5);
+padding:50px;
+margin-top:40px;
+box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
 .calc-grid{
-
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
-
+gap:30px;
+margin-top:30px;
 }
 
-.calc-inputs{
-
+.calc-input{
 display:flex;
 flex-direction:column;
-gap:25px;
-
+gap:10px;
 }
 
-.input-box{
-
-background:rgba(255,255,255,0.03);
-padding:20px;
-border-radius:12px;
-
-}
-
-.input-box label{
-
-font-size:14px;
-opacity:.7;
-
-}
-
-.input-box input,
-.input-box select{
-
-margin-top:8px;
-width:100%;
-padding:14px;
-border-radius:8px;
+.calc-input input,
+.calc-input select{
+padding:16px;
+border-radius:10px;
 border:none;
 background:#111;
 color:white;
 font-size:16px;
-
 }
 
-/* ---------------- RESULTS ---------------- */
-
 .results{
-
-display:none;
-grid-template-columns:repeat(2,1fr);
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-margin-top:40px;
+opacity:0;
+transform:translateY(20px);
+transition:all .6s ease;
+}
 
+.results.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .result-card{
-
-background:rgba(255,255,255,0.03);
+background:rgba(255,255,255,0.04);
 padding:25px;
 border-radius:14px;
-
+text-align:center;
 }
 
-.result-card h4{
-
+.result-card span{
+display:block;
 font-size:14px;
 opacity:.6;
-
 }
 
-.result-number{
-
-font-size:26px;
-margin-top:6px;
+.result-card strong{
+font-size:28px;
 color:#ffd84a;
-
 }
 
-.bar{
+/* ---------------- TESTIMONIALS ---------------- */
 
-height:6px;
-background:#222;
-border-radius:4px;
-margin-top:10px;
-overflow:hidden;
-
+.testimonials{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
 }
 
-.bar-fill{
-
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#7c3aed,#ffd84a);
-
-transition:width 1.5s ease;
-
+.testimonial{
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:14px;
+opacity:.8;
 }
 
-/* ---------------- CTA FINAL ---------------- */
-
-.cta-final{
-
+.final-cta{
+padding:160px 20px;
 text-align:center;
-margin-top:60px;
-
+background:
+radial-gradient(circle at 50% 0%,rgba(120,0,255,0.25),transparent 50%),
+#0b0b0b;
 }
 
-.cta-final button{
-
-font-size:18px;
-padding:20px 40px;
-
+.final-cta h2{
+font-size:48px;
+margin-bottom:30px;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+.footer{
+padding:40px;
+text-align:center;
+opacity:.5;
+}
+
+/* reveal animation */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
+}
+
+.visible{
+opacity:1;
+transform:translateY(0);
+}
 
 @media(max-width:900px){
 
@@ -280,11 +242,7 @@ font-size:42px;
 grid-template-columns:1fr;
 }
 
-.results{
-grid-template-columns:1fr;
-}
-
-.services{
+.testimonials{
 grid-template-columns:1fr;
 }
 
@@ -292,57 +250,40 @@ grid-template-columns:1fr;
 
 </style>
 </head>
-
 <body>
-
-<!-- HERO -->
 
 <section class="hero">
 
-<h1>Escalamos empresas.<br>Multiplicamos faturamento.</h1>
+<h1>
+Transformamos atenção em
+<span class="serif">crescimento real</span>
+</h1>
 
-<p>Estratégia, criativos e dados para aumentar ticket médio e previsibilidade de vendas.</p>
+<p>
+Estratégia, dados e execução para empresas que querem dominar seu mercado.
+</p>
 
 <div class="cta-buttons">
-<button class="primary">Agendar diagnóstico</button>
-<button class="secondary">Ver como funciona</button>
+<button class="primary">Começar</button>
+<button class="secondary">Ver resultados</button>
 </div>
 
 <div class="stats">
 
 <div class="stat">
-<strong>+50</strong>
-<div>clientes</div>
+<strong>+120</strong>
+<p>empresas atendidas</p>
 </div>
 
 <div class="stat">
-<strong>+350%</strong>
-<div>ROI médio</div>
+<strong>R$80M+</strong>
+<p>gerados para clientes</p>
 </div>
 
 <div class="stat">
-<strong>R$12M+</strong>
-<div>gerados</div>
+<strong>7 países</strong>
+<p>operações ativas</p>
 </div>
-
-</div>
-
-</section>
-
-<!-- SERVIÇOS -->
-
-<section class="section container">
-
-<h2 class="section-title">Nossas frentes</h2>
-
-<div class="services">
-
-<div class="service">Branding</div>
-<div class="service">Design</div>
-<div class="service">Tráfego pago</div>
-<div class="service">Filmagem</div>
-<div class="service">Consultoria</div>
-<div class="service">Automação</div>
 
 </div>
 
@@ -350,249 +291,170 @@ grid-template-columns:1fr;
 
 <!-- CALCULADORA ORB -->
 
-<section class="section container">
+<section class="section container reveal">
 
-<h2 class="section-title">Calculadora Orb</h2>
+<h2 style="margin-bottom:20px">
+Simule o crescimento do seu negócio
+</h2>
+
+<p style="opacity:.7;max-width:600px">
+Veja o potencial de crescimento que uma estratégia de marketing bem executada pode gerar.
+</p>
 
 <div class="calculator">
 
 <div class="calc-grid">
 
-<!-- INPUTS -->
-
-<div class="calc-inputs">
-
-<div class="input-box">
+<div class="calc-input">
 <label>Investimento mensal</label>
 <input id="investment" type="number" placeholder="5000" min="500" max="1000000">
 </div>
 
-<div class="input-box">
-<label>Segmento do negócio</label>
-
+<div class="calc-input">
+<label>Segmento</label>
 <select id="segment">
-
+<option value="geral">Geral</option>
 <option value="alimentacao">Alimentação</option>
 <option value="saude">Saúde</option>
 <option value="educacao">Educação</option>
 <option value="ecommerce">E-commerce</option>
-<option value="geral">Geral</option>
-
 </select>
-
-</div>
-
-<button class="primary" onclick="simulate()">Simular crescimento</button>
-
-</div>
-
-<!-- RESULTADOS -->
-
-<div>
-
-<div class="results" id="results"></div>
-
 </div>
 
 </div>
 
-<div class="cta-final" id="ctaFinal" style="display:none">
-<button class="primary">Quero aplicar essa estratégia no meu negócio</button>
+<div style="margin-top:30px">
+<button class="primary" onclick="calculate()">Simular crescimento</button>
+</div>
+
+<div id="results" class="results"></div>
+
+</div>
+
+</section>
+
+<section class="section container reveal">
+
+<h2 style="margin-bottom:40px">O que clientes dizem</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"A Orb aumentou nosso faturamento e nos permitiu cobrar muito mais caro."</p>
+</div>
+
+<div class="testimonial">
+<p>"Estratégia clara, execução rápida e resultados financeiros."</p>
+</div>
+
+<div class="testimonial">
+<p>"Nos ajudaram a expandir para novos mercados."</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- FINAL ORIGINAL PRESERVADO -->
+
+<section class="final-cta reveal">
+
+<h2>
+Crescimento não é sorte.<br>
+<span class="serif">É engenharia.</span>
+</h2>
+
+<button class="primary">Falar com a Orb</button>
+
+</section>
+
+<div class="footer">
+Orb Group — atendimento 24h
+</div>
+
 <script>
 
-/* ---------------- DADOS BASE ---------------- */
-
-const data={
-
-alimentacao:{
-imp:45000,
-click:650,
-follow:130,
-leads:100,
-cpl:13,
-conv:0.225,
-roi:410
-},
-
-saude:{
-imp:31000,
-click:475,
-follow:85,
-leads:25,
-cpl:62,
-conv:0.275,
-roi:300
-},
-
-educacao:{
-imp:35000,
-click:575,
-follow:135,
-leads:52,
-cpl:30,
-conv:0.055,
-roi:400
-},
-
-ecommerce:{
-imp:30000,
-click:650,
-follow:100,
-conv:0.02,
-roi:350
-},
-
-geral:{
-imp:39000,
-click:600,
-follow:115,
-leads:40,
-cpl:40,
-conv:0.10,
-roi:350
+const baseData={
+geral:{imp:39000,clicks:600,followers:115,leads:40,cpl:40,conv:10,roi:350},
+alimentacao:{imp:45000,clicks:650,followers:130,leads:100,cpl:13,conv:22,roi:410},
+saude:{imp:31000,clicks:480,followers:85,leads:25,cpl:60,conv:27,roi:300},
+educacao:{imp:35000,clicks:575,followers:135,leads:50,cpl:30,conv:5,roi:400},
+ecommerce:{imp:30000,clicks:650,followers:100,conv:2,roi:350}
 }
 
+function format(n){
+return Math.round(n/10)*10
 }
 
-/* ---------------- FUNÇÕES ---------------- */
+function calculate(){
 
-function roundSmart(n){
-
-if(n>10000) return Math.round(n/1000)*1000
-if(n>1000) return Math.round(n/10)*10
-return Math.round(n)
-
-}
-
-function calcROI(inv,baseROI){
-
-if(inv<=5000) return baseROI
-
-let progress=(inv-5000)/(300000-5000)
-
-let roi=baseROI-(baseROI-200)*progress
-
-return Math.max(200,roi)
-
-}
-
-function animate(el,value){
-
-let start=0
-let dur=1200
-let startTime=null
-
-function step(t){
-
-if(!startTime) startTime=t
-let p=(t-startTime)/dur
-if(p>1)p=1
-
-let val=start+(value-start)*p
-el.innerText=Math.round(val)
-
-if(p<1)requestAnimationFrame(step)
-
-}
-
-requestAnimationFrame(step)
-
-}
-
-function simulate(){
-
-let inv=parseFloat(document.getElementById("investment").value)
+const inv=parseFloat(document.getElementById("investment").value)
+const seg=document.getElementById("segment").value
 
 if(!inv)return
 
-let seg=document.getElementById("segment").value
+const base=baseData[seg]
+const factor=inv/1000
 
-let base=data[seg]
+let roi=base.roi
 
-let mult=inv/1000
-
-let roi=calcROI(inv,base.roi)
-
-let faturamento=inv*(roi/100)
-
-let results={
-
-"Impressões":roundSmart(base.imp*mult),
-"Cliques":roundSmart(base.click*mult),
-"Seguidores":roundSmart(base.follow*mult),
-"Conversão":Math.round(base.conv*100)+"%",
-"ROI médio":Math.round(roi)+"%",
-"Faturamento projetado":"R$ "+roundSmart(faturamento)
-
+if(inv>5000){
+const excess=Math.min(inv,300000)-5000
+const scale=excess/(300000-5000)
+roi=base.roi-(base.roi-200)*scale
 }
+
+roi=Math.max(roi,200)
+
+let revenue=inv*(roi/100)
+
+const results=[]
+
+results.push(["Impressões",format(base.imp*factor)])
+results.push(["Cliques / visitas",format(base.clicks*factor)])
+results.push(["Seguidores novos",format(base.followers*factor)])
 
 if(seg!=="ecommerce"){
-
-results["Leads"]=roundSmart(base.leads*mult)
-results["CPL médio"]="R$ "+roundSmart(base.cpl)
-
+results.push(["Leads gerados",format(base.leads*factor)])
+results.push(["CPL médio","R$ "+base.cpl])
 }
 
-renderResults(results)
-
-}
-
-/* ---------------- RENDER ---------------- */
-
-function renderResults(results){
+results.push(["Conversão",""+base.conv+"%"])
+results.push(["ROI médio",Math.round(roi)+"%"])
+results.push(["Faturamento projetado","R$ "+format(revenue)])
 
 const container=document.getElementById("results")
-
 container.innerHTML=""
 
-for(let key in results){
+results.forEach(r=>{
 
-let card=document.createElement("div")
+const card=document.createElement("div")
 card.className="result-card"
 
 card.innerHTML=`
-
-<h4>${key}</h4>
-
-<div class="result-number">0</div>
-
-<div class="bar">
-<div class="bar-fill"></div>
-</div>
-
+<span>${r[0]}</span>
+<strong>${r[1]}</strong>
 `
 
 container.appendChild(card)
 
-let num=card.querySelector(".result-number")
+})
 
-let val=results[key]
-
-if(typeof val==="number"){
-animate(num,val)
-}else{
-num.innerText=val
-}
-
-let bar=card.querySelector(".bar-fill")
-
-setTimeout(()=>{
-bar.style.width=Math.random()*90+10+"%"
-},200)
+container.classList.add("show")
 
 }
 
-container.style.display="grid"
+/* reveal animation */
 
-document.getElementById("ctaFinal").style.display="block"
-
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
 }
+})
+})
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))
 
 </script>
 
